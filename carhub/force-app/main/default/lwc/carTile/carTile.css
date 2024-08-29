@@ -1,0 +1,18 @@
+img.carImage{
+    height:120px;
+    max-width: initial;
+    cursor: pointer;;
+}
+.title{   
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+.msrp{
+    font-size: 1rem;
+}
+.content{
+    padding: 8px;
+    background-color: white;
+    border-radius: 0.25rem;
+}

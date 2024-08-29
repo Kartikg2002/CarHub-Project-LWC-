@@ -1,0 +1,22 @@
+<aura:component 
+    implements="lightning:appHomeTemplate"
+    description="Three Columns layout"
+    access="global"
+>
+<aura:attribute name="left" type="Aura.Component[]" access="global"/>
+<aura:attribute name="middle" type="Aura.Component[]" access="global"/>
+<aura:attribute name="right" type="Aura.Component[]" access="global"/>
+<div aura:id="container">
+    <lightning:layout>
+        <lightning:layoutItem aura:id="leftColumn" size="2">
+            {!v.left}
+        </lightning:layoutItem>
+        <lightning:layoutItem aura:id="middleColumn" size="7" class="middle">
+            {!v.middle}
+        </lightning:layoutItem>
+        <lightning:layoutItem aura:id="rightColumn" size="3">
+            {!v.right}
+        </lightning:layoutItem>
+    </lightning:layout>
+</div>
+</aura:component>	

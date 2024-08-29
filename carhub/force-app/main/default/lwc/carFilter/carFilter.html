@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Filters" icon-name="standard:calibration">
+        <div class="slds-m-horizontal_medium">
+            <lightning-input type="search" label="Search key" 
+            onchange={handleSearchKeyChange} value={filters.searchKey}></lightning-input>
+            <section class="slider_section">
+                <lightning-slider label="Max Price" step="100" min="0" max="999999"
+                 value={filters.maxPrice} onchange={handleMaxPriceChange}></lightning-slider>
+            </section> 
+            <section>
+                <h2><strong>Category</strong></h2>
+                <template lwc:if={categoryOptions}>
+                    <template for:each={categoryOptions} for:item="option">
+                        <lightning-input key={option.label}
+                            label={option.label}
+                            type="checkbox"
+                            data-name="categories"
+                            data-value={option.value}
+                            checked
+                            onchange={handleChange}></lightning-input>
+                    </template>
+                </template>
+                <template lwc:else>
+                    <div>{categoryError}</div>
+                </template>
+            </section>
+            <section>
+                <h2><strong>Make</strong></h2>
+                <template lwc:if={makeOptions}>
+                    <template for:each={makeOptions} for:item="option">
+                        <lightning-input key={option.label}
+                            label={option.label}
+                            type="checkbox"
+                            data-name="makeType"
+                            data-value={option.value}
+                            checked
+                            onchange={handleChange}></lightning-input>
+                    </template>
+                </template>
+                <template lwc:else>
+                    <div>{makeError}</div>
+                </template>
+            </section>
+        </div>
+    </lightning-card>
+</template>
